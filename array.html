@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //배열
+        let array = [];
+        //배열에 데이터 추가
+        array.push(1); // array = [1]
+        array.push("string"); //array = [1,"string"]
+        console.log(array);
+        array.unshift('3'); //첫 번째 방에 데이터를 넣는방법
+        array.shift();      //첫 번째 방에 있는 데이터 삭제
+        //맨 마지막 방(index)에 데이터를 넣는 방법
+        array.push('마지막');
+        array.push("라이언");   //array = [1,"string","마지막","라이언"]
+        //맨 마지막 index에 데이터를 뺌
+        array.pop();            //array = [1,"string","마지막"]   =[0,1,2]->방주소
+
+        //배열.splice
+        //slice(시작 인덱스, 삭제할 요소 길이, 추가할 배열 요소)
+        //[0,1,2]
+        // array.splice(1,0,'세입자');     //[1,"세입자","string","마지막"]
+        // array.splice(1,1,'세입자');     //[1,세입자,마지막]
+        console.log(array);
+        //splice(시작 인덱스, 삭제할 요소 길이)
+        array.splice(1,1);
+
+        //1차원 배열
+        //array = [1,2,3,4,"ddd","ddd"]
+        //2차원 배열
+        //array2 = [[],[],[],[]]
+        //3차원 배열
+        //array3 = [[[],[],[]],[[],[],[]]]
+
+        //---------------------------------Lotto---------------------------------
+        //1줄 6개 번호를 발급
+        //변수 6개X -> 1개의 배열에 저장해서 쓸 수 있다.
+        //[1,2,3,4,5,6]  (천원치만 만들어보기)
+        //단, 중복되지 않은 수만 허용해서 배열에 저장한다.
+        //for문, 배열을 활용해서 Lotto 만들어 볼 수 있다.
+        /* 1)Math.random
+           2)Math.floor ->소수점아래를 다지워줌   또는  ParseInt*/ 
+
+           console.log(Math.floor(Math.random()*45)+1);  // 0<=실수<1   =>  (0*44)+1<=실수<(1*44)+1  =>1<=실수<45
+
+
+            
+        //배열
+        ///배열에 담긴 숫자들 중에서최대값 최소값 구하는 예제
+        //array = [1,2,3,4,5,6,7,78,9,56];
+
+        let ary = [2,46,78,8,92,56,3,9,57,6];
+        let max=ary[0];
+        let min=ary[0];
+        for(let i=0;i<ary.length;i++ ){
+            //최대값 구하기
+            if(max < ary[i]){
+                max = ary[i];
+            }
+            //최소값 구하기
+            if(min>ary[i]){
+                min = ary[i];
+            }
+
+        }
+        console.log("최대값 : "+max);
+        console.log("최소값 : "+min);
+
+        //반복문
+        //for in - 반복을 할 때 인덱스 값을 가지고 반복
+        for(let index in ary){
+            console.log(index);             //index값
+            // console.log(ary[index]);     //obj처럼 데이터값
+        }
+
+        //for of - 반복을 할 때 데이터를 가지고 반복
+        for(let obj of ary){        //[2,46,78,8,92,56,3,9,57,6];
+            console.log(obj);
+        }
+
+        //split
+        let str = "12,78,94,aa,26,8,hello";
+        let strAry = str.split(',');
+        console.log(strAry);
+
+        //함수
+        //계산기
+        //함수의 형태
+        function 함수명(){
+
+        }
+
+
+    </script>
+</body>
+</html>
